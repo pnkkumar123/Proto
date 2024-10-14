@@ -3,28 +3,30 @@
 import React, { useState } from 'react';
 import Link from 'next/link';  
 import { AiOutlineUser } from 'react-icons/ai';
-import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';  // Added hamburger and close icon
+import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';  
 import { IoBagHandleOutline } from "react-icons/io5";
 
 const Navbar: React.FC = () => {
-  // State to toggle search input field
   const [showSearch, setShowSearch] = useState(false);
-  
-  // State to toggle mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
-  // State for item count
-  const [itemCount, setItemCount] = useState(3); // Initialize item count
+  const [itemCount, setItemCount] = useState(3);
+
+  // Functions to add or remove items
+  const addItem = () => {
+    setItemCount(prevCount => prevCount + 1);
+  };
+
+  const removeItem = () => {
+    setItemCount(prevCount => Math.max(prevCount - 1, 0));
+  };
 
   return (
     <nav className="bg-white shadow-md">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
         <div className="text-2xl font-bold text-black">
           <span className="text-white bg-black">KALO</span>FY
         </div>
 
-        {/* Regular Navbar Links (hidden on mobile) */}
         <div className="hidden md:flex space-x-6">
           <Link className="text-gray-700 hover:text-blue-600" href="/">
             Recepie Generation
@@ -37,28 +39,24 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Icons and Search Button */}
         <div className="flex items-center space-x-4">
-          {/* Toggle search input field */}
           <div className="relative">
             <FaSearch
               className="text-gray-600 text-2xl cursor-pointer"
-              onClick={() => setShowSearch(!showSearch)} // Toggle search
+              onClick={() => setShowSearch(!showSearch)} 
             />
             {showSearch && (
               <input
                 type="text"
                 placeholder="Search..."
                 className="absolute top-full mt-2 right-0 w-[200px] p-2 border rounded-lg shadow-md focus:outline-none"
-                style={{ zIndex: 1000 }} // Ensure it's visible above other elements
+                style={{ zIndex: 1000 }}
               />
             )}
           </div>
 
-          {/* User Icon */}
           <AiOutlineUser className="text-gray-600 text-2xl cursor-pointer" />
 
-          {/* Shopping Bag Icon with item count */}
           <div className="relative">
             <IoBagHandleOutline className="text-gray-600 text-2xl cursor-pointer" />
             {itemCount > 0 && (
@@ -68,24 +66,22 @@ const Navbar: React.FC = () => {
             )}
           </div>
 
-          {/* Hamburger Icon for mobile (shown only on mobile) */}
           <div className="md:hidden">
             {!isMobileMenuOpen ? (
               <FaBars
                 className="text-gray-600 text-2xl cursor-pointer"
-                onClick={() => setIsMobileMenuOpen(true)} // Open the mobile menu
+                onClick={() => setIsMobileMenuOpen(true)}
               />
             ) : (
               <FaTimes
                 className="text-gray-600 text-2xl cursor-pointer"
-                onClick={() => setIsMobileMenuOpen(false)} // Close the mobile menu
+                onClick={() => setIsMobileMenuOpen(false)}
               />
             )}
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu (visible only on small screens when hamburger is clicked) */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white p-4">
           <Link className="block text-gray-700 hover:text-blue-600 py-2" href="/">
@@ -99,6 +95,16 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
       )}
+
+      {/* Optional buttons to test item count */}
+      <div className="mt-4 flex space-x-2">
+        <button onClick={addItem} className="bg-blue-500 text-white px-2 py-1 rounded">
+          Add Item
+        </button>
+        <button onClick={removeItem} className="bg-red-500 text-white px-2 py-1 rounded">
+          Remove Item
+        </button>
+      </div>
     </nav>
   );
 };
