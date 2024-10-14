@@ -1,8 +1,8 @@
-"use client";  // Ensure this is at the top
+"use client";  
 
 import React, { useState } from 'react';
-import Link from 'next/link';  // Import Next.js Link
-import { AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
+import Link from 'next/link';  
+import {  AiOutlineUser } from 'react-icons/ai';
 import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';  // Added hamburger and close icon
 import { IoBagHandleOutline } from "react-icons/io5";
 
@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
   // State to toggle mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
-  // Example item count (you can replace it with actual state or props)
+  
   const [itemCount, setItemCount] = useState(3);
 
   return (

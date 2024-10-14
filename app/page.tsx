@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Navbar from "./components/Navbar";
 import HowItWorks from "./components/HowItWorks";
 import LetsCompare from "./components/LetsCompare";

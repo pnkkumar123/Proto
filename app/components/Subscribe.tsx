@@ -97,26 +97,26 @@ const SubscribeSection = () => {
 
           <div className="flex flex-col">
             <h4 className="font-semibold text-gray-800 mb-2">Contact Us</h4>
-            <a href="#">Subscribe</a>
-            <a href="#">Follow Us</a>
-            <a href="#">About Us</a>
-            <a href="#">Blog</a>
+            <Link href="#">Subscribe</Link>
+            <Link href="#">Follow Us</Link>
+            <Link href="#">About Us</Link>
+            <Link href="#">Blog</Link>
           </div>
 
           <div className="flex flex-col">
             <h4 className="font-semibold text-gray-800 mb-2">How it works</h4>
-            <a href="#">Testimonials</a>
-            <a href="#">Kitchen And Delivery Schedule</a>
-            <a href="#">Let's Compare</a>
-            <a href="#">Why Choose Us</a>
+            <Link href="#">Testimonials</Link>
+            <Link href="#">Kitchen And Delivery Schedule</Link>
+            <Link href="#">Let&apos;s Compare</Link>
+            <Link href="#">Why Choose Us</Link>
           </div>
 
           <div className="flex flex-col">
             <h4 className="font-semibold text-gray-800 mb-2">Partnerships & Affiliates</h4>
-            <a href="#">Sustainability</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">FAQs</a>
+            <Link href="#">Sustainability</Link>
+            <Link href="#">Privacy Policy</Link>
+            <Link href="#">Terms & Conditions</Link>
+            <Link href="#">FAQs</Link>
           </div>
         </div>
 
@@ -132,8 +132,8 @@ const SubscribeSection = () => {
 
       {/* Footer Bottom */}
       <div className="mt-12 ml-[-20] text-center text-gray-500 text-sm flex flex-col md:flex-row justify-center">
-        <p>&copy; 2023 Kalofy. All Rights Reserved.</p>
-        <Link href="#" className="mt-2 md:mt-0 md:ml-2">Terms & Conditions</Link>
+      <p>&copy; 2023 Kalofy. All Rights Reserved.</p>
+      <Link href="#" className="mt-2 md:mt-0 md:ml-2">Terms &amp; Conditions</Link> 
       </div>
     </footer>
   );
