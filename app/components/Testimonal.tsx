@@ -1,4 +1,3 @@
-"use client";
 import Image from 'next/image';
 
 type TestimonialProps = {
@@ -21,27 +20,29 @@ const Testimonial: React.FC<TestimonialProps> = ({ name, role, rating, text, ima
           className="rounded-full h-80 w-80" 
         />
       </div>
-      <div className="ml-6 flex-1 text-center"> {/* Use flex-1 to take the remaining space */}
+      <div className="ml-6 flex-1 text-center">
         <h2 className="text-xl font-bold text-gray-900">{name}</h2>
         <p className="text-sm text-gray-600">{role}</p>
         <p className="mt-4 text-gray-700">"{text}"</p>
-        <div className="flex flex-col items-center mt-4"> {/* Centered container for rating and image */}
-          <div className="flex items-center justify-center">
-            <Image 
-              src={imageUrl} 
-              alt={name} 
-              width={40} 
-              height={40} 
-              className="rounded-full h-10 w-10" // Adjusted size for the small image
-            />
-            <div className="flex text-yellow-400 ml-2"> {/* Added margin for spacing */}
+        <div className="flex items-center justify-center mt-4">
+          <div className='flex flex-col'>
+            <div>
+              <Image 
+                src={imageUrl} 
+                alt={name} 
+                width={40} 
+                height={40} 
+                className="rounded-full h-5 w-5" 
+              />
+            </div>
+            <div className="flex text-yellow-400">
               {Array.from({ length: Math.floor(rating) }).map((_, index) => (
                 <span key={index}>★</span>
               ))}
               {rating % 1 !== 0 && <span>☆</span>}
             </div>
-          <span className="mt-2 text-gray-600">{rating}</span>
           </div>
+          <span className="ml-2 text-gray-600">{rating}</span>
         </div>
       </div>
     </div>
