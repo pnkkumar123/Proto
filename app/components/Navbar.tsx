@@ -98,12 +98,7 @@ const Navbar: React.FC = () => {
 
       {/* Optional buttons to test item count */}
       <div className="mt-4 flex space-x-2">
-        <button onClick={addItem} className="bg-blue-500 text-white px-2 py-1 rounded">
-          Add Item
-        </button>
-        <button onClick={removeItem} className="bg-red-500 text-white px-2 py-1 rounded">
-          Remove Item
-        </button>
+        
       </div>
     </nav>
   );
