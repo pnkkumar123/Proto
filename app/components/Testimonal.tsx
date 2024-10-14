@@ -23,7 +23,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ name, role, rating, text, ima
       <div className="ml-6 flex-1 text-center">
         <h2 className="text-xl font-bold text-gray-900">{name}</h2>
         <p className="text-sm text-gray-600">{role}</p>
-        <p className="mt-4 text-gray-700">"{text}"</p>
+        <p className="mt-4 text-gray-700">&quot;{text}&quot;</p>
         <div className="flex items-center justify-center mt-4">
           <div className='flex flex-col'>
             <div>

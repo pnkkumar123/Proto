@@ -60,7 +60,7 @@ const Slideshow = () => {
 
       {/* Image Section for Larger Screens */}
       <div className="hidden lg:block lg:w-1/2 relative overflow-hidden rounded-lg">
-        <img
+        <Image
           src={slides[currentIndex].imageUrl}
           alt="Food image"
           className="w-full h-auto object-cover"

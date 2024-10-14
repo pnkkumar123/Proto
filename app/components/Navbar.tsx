@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';  
-import {  AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineUser } from 'react-icons/ai';
 import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';  // Added hamburger and close icon
 import { IoBagHandleOutline } from "react-icons/io5";
 
@@ -13,8 +13,8 @@ const Navbar: React.FC = () => {
   // State to toggle mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
-  
-  const [itemCount, setItemCount] = useState(3);
+  // State for item count
+  const [itemCount, setItemCount] = useState(3); // Initialize item count
 
   return (
     <nav className="bg-white shadow-md">
